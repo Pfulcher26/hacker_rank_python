@@ -94,8 +94,27 @@
 
 # fizzBuzz(14)
 
-def lonelyinteger(a):
+# def lonelyinteger(a):
+#     # Write your code here
+#     for n in a:
+#         if a.count(n)==1:
+#             return n 
+
+def diagonalDifference(arr):
     # Write your code here
-    for n in a:
-        if a.count(n)==1:
-            return n 
+    sum1 = 0
+    sum2 = 0 
+    n = len(arr)
+  
+    for i in range(len(arr)):
+      sum1 += arr[i][i]
+      sum2 += arr[i][n-1]
+      n = n-1 
+
+    sum3 = sum1 - sum2
+    print(abs(sum3))
+      
+
+diagonalDifference([[0,1,2],
+                    [3,4,5],
+                    [9,7,8]])
