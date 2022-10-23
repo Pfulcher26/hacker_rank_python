@@ -100,21 +100,40 @@
 #         if a.count(n)==1:
 #             return n 
 
-def diagonalDifference(arr):
-    # Write your code here
-    sum1 = 0
-    sum2 = 0 
-    n = len(arr)
+# def diagonalDifference(arr):
+#     # Write your code here
+#     sum1 = 0
+#     sum2 = 0 
+#     n = len(arr)
   
-    for i in range(len(arr)):
-      sum1 += arr[i][i]
-      sum2 += arr[i][n-1]
-      n = n-1 
+#     for i in range(len(arr)):
+#       sum1 += arr[i][i]
+#       sum2 += arr[i][n-1]
+#       n = n-1 
 
-    sum3 = sum1 - sum2
-    print(abs(sum3))
+#     sum3 = sum1 - sum2
+#     print(abs(sum3))
       
 
-diagonalDifference([[0,1,2],
-                    [3,4,5],
-                    [9,7,8]])
+# diagonalDifference([[0,1,2],
+#                     [3,4,5],
+#                     [9,7,8]])
+
+def findZigZagSequence(a, n):
+    a.sort()
+    mid = int((n + 1)/2) -1
+    a[mid], a[n-1] = a[n-1], a[mid]
+
+    st = mid + 1 
+    ed = n - 2 
+    while(st <= ed):
+        a[st], a[ed] = a[ed], a[st]
+        st = st + 1
+        ed = ed - 1
+
+    for i in range (n):
+        if i == n-1:
+            print(a[i])
+        else:
+            print(a[i], end = ' ')
+    return
