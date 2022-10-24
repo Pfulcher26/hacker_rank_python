@@ -166,29 +166,51 @@
 
 # caesarCipher('Always-Look-on-the-Bright-Side-of-Life', 5)
 
-def grid_sort_two(grid):
+# def grid_sort_two(grid):
   
-  new_list = map(lambda x: ''.join(sorted(x)), grid)
+#   new_list = map(lambda x: ''.join(sorted(x)), grid)
   
-  result = False 
-  base_value = 'a'
+#   result = False 
+#   base_value = 'a'
   
-  for string in list(new_list):
-    if string[0] >= base_value:
-      result = True
-      base_value = string[0]
-      print(f'new base value {base_value}')
-    else:
-      result = False
-      break 
-    return result 
-  #   #   base_value = string[0]
-  #   #   print(base_value)
-  #   #   result = True
-  #   # else:
-  #   #   result = False
-  # print(result) 
+#   for string in list(new_list):
+#     if string[0] >= base_value:
+#       result = True
+#       base_value = string[0]
+#       print(f'new base value {base_value}')
+#     else:
+#       result = False
+#       break 
+#     return result 
+#   #   #   base_value = string[0]
+#   #   #   print(base_value)
+#   #   #   result = True
+#   #   # else:
+#   #   #   result = False
+#   # print(result) 
       
 
 # grid_sort(['abc','bca','cba'])
-grid_sort_two(['abc','def','ghi'])
+# grid_sort_two(['abc','def','ghi'])
+
+# # super digit 
+def super_digit(n, k):
+  mult_n = int(str(n)*k)
+  s = 0
+  while mult_n:
+    s += mult_n % 10
+    mult_n //= 10
+ 
+  
+  while len(str(s)) != 1:
+    return super_digit(s, 1)  
+  
+  return s
+
+  
+  # sum = 0
+  # while len(str(digit)) != 1:
+  #   sum = sum(list(digit))
+  #   print(sum)
+
+super_digit(148, 3)
