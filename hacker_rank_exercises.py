@@ -119,27 +119,24 @@
 #                     [3,4,5],
 #                     [9,7,8]])
 
-def findZigZagSequence(a, n):
-    a.sort()
-    mid = int((n + 1)/2) -1
-    a[mid], a[n-1] = a[n-1], a[mid]
+# def findZigZagSequence(a, n):
+#     a.sort()
+#     mid = int((n + 1)/2) -1
+#     a[mid], a[n-1] = a[n-1], a[mid]
 
-    st = mid + 1 
-    ed = n - 2 
-    while(st <= ed):
-        a[st], a[ed] = a[ed], a[st]
-        st = st + 1
-        ed = ed - 1
+#     st = mid + 1 
+#     ed = n - 2 
+#     while(st <= ed):
+#         a[st], a[ed] = a[ed], a[st]
+#         st = st + 1
+#         ed = ed - 1
 
-    for i in range (n):
-        if i == n-1:
-            print(a[i])
-        else:
-            print(a[i], end = ' ')
-    return
-
-
-
+#     for i in range (n):
+#         if i == n-1:
+#             print(a[i])
+#         else:
+#             print(a[i], end = ' ')
+#     return
 
 # def alphabet_addition(a, k):
 #   incremented_char = (chr((ord(a) - 97 + k) % 26 + 97))
@@ -168,3 +165,30 @@ def findZigZagSequence(a, n):
 #     print(''.join(list(encrypted)))
 
 # caesarCipher('Always-Look-on-the-Bright-Side-of-Life', 5)
+
+def grid_sort_two(grid):
+  
+  new_list = map(lambda x: ''.join(sorted(x)), grid)
+  
+  result = False 
+  base_value = 'a'
+  
+  for string in list(new_list):
+    if string[0] >= base_value:
+      result = True
+      base_value = string[0]
+      print(f'new base value {base_value}')
+    else:
+      result = False
+      break 
+    return result 
+  #   #   base_value = string[0]
+  #   #   print(base_value)
+  #   #   result = True
+  #   # else:
+  #   #   result = False
+  # print(result) 
+      
+
+# grid_sort(['abc','bca','cba'])
+grid_sort_two(['abc','def','ghi'])
