@@ -137,3 +137,34 @@ def findZigZagSequence(a, n):
         else:
             print(a[i], end = ' ')
     return
+
+
+
+
+# def alphabet_addition(a, k):
+#   incremented_char = (chr((ord(a) - 97 + k) % 26 + 97))
+#   print(incremented_char)
+
+# alphabet_addition('w', 5)
+
+# def caesarCipherB(s, k):
+#   def cypher(x):
+#     if x.isalpha():
+#       if x.isupper():
+#         x = (chr((ord(x.lower()) - 97 + k) % 26 + 97))
+#         return x.upper()
+#       return (chr((ord(x) - 97 + k) % 26 + 97))
+#     else:
+#       return x 
+#   string = map(cypher, s)
+#   return ''.join(list(string))
+
+# print(caesarCipherB('Hello', 2))
+
+
+# def caesarCipher(s, k):
+#     # Write your code here
+#     encrypted = map(lambda x: (chr((ord(x) - 97 + k) % 26 + 97)) if x.isalpha() else x, s)
+#     print(''.join(list(encrypted)))
+
+# caesarCipher('Always-Look-on-the-Bright-Side-of-Life', 5)
