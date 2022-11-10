@@ -193,24 +193,42 @@
 # grid_sort(['abc','bca','cba'])
 # grid_sort_two(['abc','def','ghi'])
 
-# # super digit 
-def super_digit(n, k):
-  mult_n = int(str(n)*k)
-  s = 0
-  while mult_n:
-    s += mult_n % 10
-    mult_n //= 10
+# # # super digit 
+# def super_digit(n, k):
+#   mult_n = int(str(n)*k)
+#   s = 0
+#   while mult_n:
+#     s += mult_n % 10
+#     mult_n //= 10
  
   
-  while len(str(s)) != 1:
-    return super_digit(s, 1)  
+#   while len(str(s)) != 1:
+#     return super_digit(s, 1)  
   
-  return s
+#   return s
 
   
-  # sum = 0
-  # while len(str(digit)) != 1:
-  #   sum = sum(list(digit))
-  #   print(sum)
+#   # sum = 0
+#   # while len(str(digit)) != 1:
+#   #   sum = sum(list(digit))
+#   #   print(sum)
 
-super_digit(148, 3)
+# super_digit(148, 3)
+
+# smash words 
+
+def smash(words):
+    sentence = ""
+    for word in words:
+        sentence += word + " "
+    print(sentence)
+  
+smash(['happy', 'go', 'lucky'])
+
+def smash_two(words):
+  result = ' '.join(map(str, words)) 
+  return result 
+
+print(smash_two(['happy', 'go', 'lucky']))
+
+smash=lambda x:' '.join(x)
