@@ -233,5 +233,12 @@
 
 # smash=lambda x:' '.join(x)
 
-def count_by(x, n):
-    return [i * x for i in range(1,n+1)]
+# def count_by(x, n):
+#     return [i * x for i in range(1,n+1)]
+
+def sum_mix(arr):
+  int_array = list(map(lambda x: int(x), arr))
+  sum = functools.reduce(lambda a, b: a+b, int_array)
+  print(sum)
+
+sum_mix([1,'2',3])
