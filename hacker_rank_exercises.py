@@ -217,18 +217,21 @@
 
 # smash words 
 
-def smash(words):
-    sentence = ""
-    for word in words:
-        sentence += word + " "
-    print(sentence)
+# def smash(words):
+#     sentence = ""
+#     for word in words:
+#         sentence += word + " "
+#     print(sentence)
   
-smash(['happy', 'go', 'lucky'])
+# smash(['happy', 'go', 'lucky'])
 
-def smash_two(words):
-  result = ' '.join(map(str, words)) 
-  return result 
+# def smash_two(words):
+#   result = ' '.join(map(str, words)) 
+#   return result 
 
-print(smash_two(['happy', 'go', 'lucky']))
+# print(smash_two(['happy', 'go', 'lucky']))
 
-smash=lambda x:' '.join(x)
+# smash=lambda x:' '.join(x)
+
+def count_by(x, n):
+    return [i * x for i in range(1,n+1)]
