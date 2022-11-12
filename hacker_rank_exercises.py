@@ -251,12 +251,23 @@
 # def solution(inputString):
 #     return inputString == inputString[::-1]
 
-def solution(inputArray):
-    largest = inputArray[0] * inputArray[1]
-    for i in range(len(inputArray[:-1])):
-      largest = inputArray[i] * inputArray[i + 1] if inputArray[i] * inputArray[i + 1] > largest else largest
-    return largest 
+# def solution(inputArray):
+#     largest = inputArray[0] * inputArray[1]
+#     for i in range(len(inputArray[:-1])):
+#       largest = inputArray[i] * inputArray[i + 1] if inputArray[i] * inputArray[i + 1] > largest else largest
+#     return largest 
 
-def solution(inputArray):
-    return max([inputArray[i] * inputArray[i+1] for i in range(len(inputArray)-1)])
+# def solution(inputArray):
+#     return max([inputArray[i] * inputArray[i+1] for i in range(len(inputArray)-1)])
+
+def solution(statues):
+    sorted_statues = statues.sort()
+    number_of_additional_satues = 0
+    for i in range(len(statues[:-1])):
+        if statues[i] + 1 != statues[i+1]:
+            difference = (statues[i+1] - statues[i]) - 1
+            number_of_additional_satues += difference 
+    return number_of_additional_satues
+
+print(solution([1,2,5,6]))
 
