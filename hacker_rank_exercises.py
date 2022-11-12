@@ -248,6 +248,15 @@
 # def solution(year):
 #     return int(math.ceil(year/100))
 
-def solution(inputString):
-    return inputString == inputString[::-1]
+# def solution(inputString):
+#     return inputString == inputString[::-1]
+
+def solution(inputArray):
+    largest = inputArray[0] * inputArray[1]
+    for i in range(len(inputArray[:-1])):
+      largest = inputArray[i] * inputArray[i + 1] if inputArray[i] * inputArray[i + 1] > largest else largest
+    return largest 
+
+def solution(inputArray):
+    return max([inputArray[i] * inputArray[i+1] for i in range(len(inputArray)-1)])
 
