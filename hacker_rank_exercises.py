@@ -260,14 +260,38 @@
 # def solution(inputArray):
 #     return max([inputArray[i] * inputArray[i+1] for i in range(len(inputArray)-1)])
 
-def solution(statues):
-    sorted_statues = statues.sort()
-    number_of_additional_satues = 0
-    for i in range(len(statues[:-1])):
-        if statues[i] + 1 != statues[i+1]:
-            difference = (statues[i+1] - statues[i]) - 1
-            number_of_additional_satues += difference 
-    return number_of_additional_satues
+# def solution(statues):
+#     sorted_statues = statues.sort()
+#     number_of_additional_statues = 0
+#     for i in range(len(statues[:-1])):
+#         if statues[i] + 1 != statues[i+1]:
+#             difference = (statues[i+1] - statues[i]) - 1
+#             number_of_additional_statues += difference 
+#     return number_of_additional_statues
 
-print(solution([1,2,5,6]))
+# print(solution([1,2,5,6]))
 
+def solution(matrix):
+    haunted_indexes = []
+    ghost_sum = 0 
+    for n in range(len(matrix)): 
+      for i in range(len(matrix[n])):
+        if matrix[n][i] == 0:
+            haunted_indexes.append(i)
+      for index in sorted(haunted_indexes, reverse=True):
+        del matrix[n][index]
+      ghost_sum += sum(matrix[n])
+    print(ghost_sum)
+    # print(haunted_indexes)
+    # print(matrix)
+        
+    
+    # for index in sorted(haunted_indexes, reverse=True):
+    #     del matrix[index]
+
+    # print(matrix)
+    # print(sum(matrix))
+  
+solution([[1,1,1], 
+ [2,2,2], 
+ [3,3,3]])
