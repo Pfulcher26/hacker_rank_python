@@ -243,7 +243,11 @@
 
 # sum_mix([1,'2',3])
 
-import math 
+# import math 
 
-def solution(year):
-    return int(math.ceil(year/100))
+# def solution(year):
+#     return int(math.ceil(year/100))
+
+def solution(inputString):
+    return inputString == inputString[::-1]
+
